@@ -1,13 +1,10 @@
-from pathlib import Path
 from coding_model.tools import Workspace
 
-def test_workspace_rejects_path_escape(tmp_path: Path):
-    workspace=Workspace(tmp_path)
-    try: workspace.read_file("../outside.txt")
-    except ValueError: pass
-    else: raise AssertionError("workspace escape was not rejected")
+def test_escape_is_rejected(tmp_path):
+    w=Workspace(tmp_path)
+    try: w.read_file("../outside.txt")
+    except ValueError: return
+    assert False
 
-def test_workspace_can_write_and_read(tmp_path: Path):
-    workspace=Workspace(tmp_path)
-    workspace.write_file("src/example.py","print('hello')\n")
-    assert workspace.read_file("src/example.py")=="print('hello')\n"
+def test_write_read(tmp_path):
+    w=Workspace(tmp_path); w.write_file("src/a.py","print(1)\n"); assert w.read_file("src/a.py")=="print(1)\n"

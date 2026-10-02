@@ -9,11 +9,7 @@ description = "Full-purpose local AI coding assistant powered by GGUF models."
 readme = "README.md"
 requires-python = ">=3.11"
 license = {text = "MIT"}
-dependencies = [
-    "llama-cpp-python>=0.3.16",
-    "typer>=0.16.0",
-    "rich>=14.0.0",
-]
+dependencies = ["llama-cpp-python>=0.3.16", "typer>=0.16.0", "rich>=14.0.0"]
 
 [project.optional-dependencies]
 dev = ["pytest>=8.0", "ruff>=0.12"]

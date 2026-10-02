@@ -1,7 +1,5 @@
 # Models
 
-Put the local model at `models/assistant.gguf`.
+Place the local model at `models/assistant.gguf`. GGUF weights are ignored by Git.
 
-GGUF weights are ignored by Git. Do not commit large model binaries to the repository.
-
-You can use another location with `CODING_MODEL_PATH=/path/to/assistant.gguf`.
+Set `CODING_MODEL_PATH` to use a different GGUF file.
